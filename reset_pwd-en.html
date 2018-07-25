@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->
+    <title>IT服务平台</title>
+    <!-- BOOTSTRAP CORE STYLE  -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <!-- FONT AWESOME ICONS  -->
+    <link href="assets/css/font-awesome.css" rel="stylesheet"/>
+    <!-- CUSTOM STYLE  -->
+    <link href="assets/css/style.css" rel="stylesheet"/>
+    <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<!-- HEADER END-->
+<div class="navbar navbar-inverse set-radius-zero">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/img/logo.jpg"/>
+            </a>
+
+        </div>
+        <br><br>
+        <div class="pull-right">
+            <div class="btn-group">
+                <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">English <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html">中文</a></li>
+                </ul>
+            </div>
+            &nbsp;&nbsp;
+            <a href="login-en.html" class="btn btn-default">Log out</a>
+        </div>
+    </div>
+</div>
+<br/>
+<!-- LOGO HEADER END-->
+<section class="menu-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="navbar-collapse collapse">
+                    <ul id="menu-top" class="nav navbar-nav">
+                        <li><a href="index-en.html">Personal Information</a></li>
+                        <li><a href="application-en.html">Application</a></li>
+                        <li><a class="menu-top-active" href="reset_pwd-en.html">Reset Password</a></li>
+                        <li><a href="safe-en.html">Security Center</a></li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- MENU SECTION END-->
+<div class="content-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="page-head-line position">Zhjiang Sci-Tech University IT service self-service platform</h4>
+
+            </div>
+
+        </div>
+                <div class="notice-board">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Reset Password
+                            <div class="pull-right">
+                                <div class="dropdown">
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="col-md-6 col-md-offset-3" id="reset">
+                                <label>Modify Project : </label>
+                                <ul id="modifier" class="position col-md-12">
+                                    <li class="col-md-3"><img src="assets/img/1.png"/>
+                                        <p><input type="radio" name="1" value="option1"/>Email</p></li>
+                                    <li class="col-md-3"><img src="assets/img/2.png"/>
+                                        <p><input type="radio" name="1" value="option2"/>VPN</p></li>
+                                    <li class="col-md-3"><img src="assets/img/3.png"/>
+                                        <p><input type="radio" name="1" value="option3"/>Disk</p></li>
+                                    <li class="col-md-3"><img src="assets/img/4.png"/>
+                                        <p><input type="radio" name="1" value="option4"/>Network</p></li>
+
+                                </ul>
+                                <br>
+                                <label>Password : </label>
+                                <input id="newPwd" placeholder="Your Password" type="password" class="form-control"/>
+
+                                <label>Repeat Password : </label>
+                                <input id="renew" placeholder="Re-typing Password" type="password" class="form-control"/>
+                                <br />
+                                <button class="btn btn-primary" type="button" id="submit"> Submit </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <br/>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+    </div>
+</div>
+<!-- CONTENT-WRAPPER SECTION END-->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="text-align: center;">
+                Copyright &copy; 2014 浙江理工大学网络信息中心版权所有　|　E-mail：nic@zstu.edu.cn　|　浙ICP备10006424号
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- FOOTER SECTION END-->
+<!-- JAVASCRIPT AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+<!-- CORE JQUERY SCRIPTS -->
+<script src="assets/js/jquery-1.11.1.js"></script>
+<!-- BOOTSTRAP SCRIPTS  -->
+<script src="assets/js/bootstrap.js"></script>
+<script src="https://cdn.bootcss.com/layer/3.1.0/layer.js"></script>
+<script>
+    $(function(){
+        $('#submit').click(function(){
+            var new_pwd=$('#newPwd').val();
+            var renew=$('#renew').val();
+            var place1=$('#newPwd').attr('placeholder');
+            var place2=$('#renew').attr('placeholder');
+            var check=false;
+            if(new_pwd==''){
+                layer.tips(place1, '#newPwd', {
+                    tips: [4, '#FF5722'],
+                    tipsMore: true,
+                });
+                check = true;
+            }
+            if(renew==''){
+               layer.tips(place2, '#renew', {
+                    tips: [4, '#FF5722'],
+                    tipsMore: true,
+                });
+                check = true;
+            } else{
+                if(new_pwd!=renew){
+                    layer.tips("Passwords don\'t match", '#renew', {
+                        tips: [4, '#FF5722'],
+                        tipsMore: true,
+                    });
+                    check = true;
+                }
+            }
+
+                var val=$('#modifier :input[name="1"]:checked').val();
+                if(val==null){
+                    layer.tips('Please select modify project', '#modifier', {
+                        tips: [4, '#FF5722'],
+                        tipsMore: true
+                    });
+                    check=true;
+                }
+
+
+            if(check){
+                return false;
+            }else{
+                layer.alert("Successful！");
+            }
+        })
+    })
+</script>
+</body>
+</html>

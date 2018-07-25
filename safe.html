@@ -1,0 +1,260 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->
+    <title>IT服务平台</title>
+    <!-- BOOTSTRAP CORE STYLE  -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <!-- FONT AWESOME ICONS  -->
+    <link href="assets/css/font-awesome.css" rel="stylesheet"/>
+    <!-- CUSTOM STYLE  -->
+    <link href="assets/css/style.css" rel="stylesheet"/>
+    <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<!-- HEADER END-->
+<div class="navbar navbar-inverse set-radius-zero">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/img/logo.jpg"/>
+            </a>
+        </div>
+        <br><br>
+        <div class="pull-right">
+            <div class="btn-group">
+                <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">中文 <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="index-en.html">English</a></li>
+                </ul>
+            </div>
+            &nbsp;&nbsp;
+
+            <a href="login.html" class="btn btn-default">退出</a>
+        </div>
+    </div>
+</div>
+<br/>
+<!-- LOGO HEADER END-->
+<section class="menu-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="navbar-collapse collapse">
+                    <ul id="menu-top" class="nav navbar-nav">
+                        <li><a href="index.html">个人信息</a></li>
+                        <li><a href="application.html">我的应用</a></li>
+                        <li><a href="reset_pwd.html">重置密码</a></li>
+                        <li><a class="menu-top-active" href="safe.html">安全中心</a></li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- MENU SECTION END-->
+<div class="content-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="page-head-line position">浙江理工大学IT服务自助平台</h4>
+            </div>
+        </div>
+
+        <div class="notice-board">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    安全中心
+                    <div class="pull-right">
+                        <div class="dropdown">
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-6 col-md-offset-3" id="reset">
+
+                        <div class="form-group">
+                            <span class="col-md-6"><input type="radio" name="optionsRadios" value="请输入密保邮箱" checked/>密保邮箱</span>
+                            <span class="col-md-6"><input type="radio" name="optionsRadios" value="请输入密保手机"/>密保手机</span>
+                        </div>
+                        <br>
+                        <label>平台密码 : </label>
+                        <input placeholder="请输入平台密码" type="password" class="form-control"/>
+                        <label>密保信息 : </label>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input id="privary" placeholder="请输入密保邮箱" type="text" class="form-control">
+                                <span class="input-group-btn"><input class="btn btn-primary" type="button" value="获取验证码" id="getting"/></span>
+                            </div><!-- /input-group -->
+                        </div><!-- /.col-lg-6 -->
+                        <label>验证码 : </label>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input id="security" placeholder="请输入验证码" type="text" class="form-control">
+                                <span class="input-group-btn"><button class="btn btn-primary" id="submit" type="button"> 提 交 </button></span>
+                            </div><!-- /input-group -->
+                        </div><!-- /.col-lg-6 -->
+                        <br>
+                        <h3 class="position">重置平台密码</h3>
+                        <form id="resetPwd">
+                        <label>原密码 : </label>
+                        <input id="original_pwd" placeholder="请输入原密码" type="password" class="form-control"/>
+                        <label>新密码 : </label>
+                        <input id="new_pwd" placeholder="请输入新密码" type="password" class="form-control"/>
+                        <label>重复新密码 : </label>
+                        <input id="renew_pwd" placeholder="请重复新密码" type="password" class="form-control"/>
+                        <br/>
+                        <button href="" id="submit1" class="btn btn-primary"> 提 交 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</form>
+                        <br/>
+                        <br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- CONTENT-WRAPPER SECTION END-->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="text-align: center;">
+                Copyright &copy; 2014 浙江理工大学网络信息中心版权所有　|　E-mail：nic@zstu.edu.cn　|　浙ICP备10006424号
+            </div>
+
+        </div>
+    </div>
+</footer>
+<!-- FOOTER SECTION END-->
+<!-- JAVASCRIPT AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+<!-- CORE JQUERY SCRIPTS -->
+<script src="assets/js/jquery-1.11.1.js"></script>
+<!-- BOOTSTRAP SCRIPTS  -->
+<script src="assets/js/bootstrap.js"></script>
+<script src="https://cdn.bootcss.com/layer/3.1.0/layer.js"></script>
+<script>
+    $(function () {
+//        选择密保信息
+        $('input[name="optionsRadios"]').each(function () {
+            $(this).click(function () {
+                var select = $('input[name="optionsRadios"]:checked').val();
+                $('#privary').attr('placeholder', select);
+            })
+        });
+//        判断密保信息为空
+        $('#getting').click(function() {
+            var placeholder=$('#privary').attr('placeholder');
+            var text=$('#privary').val();
+            if(text==''){
+                layer.tips(placeholder, '#privary', {
+                    tips: [4, '#FF5722'],
+
+                });
+            }
+            else{
+//                倒计时
+                var btn = $(this);
+                var count = 60;
+                var resend = setInterval(function() {
+                    count--;
+                    if(count > 0) {
+                        btn.val(count + "秒后重新获取");
+                    } else {
+                        clearInterval(resend);
+                        btn.val("获取验证码").removeAttr('disabled style');
+                    }
+                }, 1000);
+                btn.attr('disabled', true).css('cursor', 'not-allowed');
+            }
+
+        });
+//        判断验证码
+        $('#submit').click(function(){
+            var placeholder=$('#security').attr('placeholder');
+            var text1=$('#security').val();
+            if(text1==''){
+                layer.tips(placeholder, '#security', {
+                    tips: [4, '#FF5722'],
+                });
+                return false;
+            }
+            else{
+                layer.alert('提交成功！')
+            }
+        })
+//        判断重置密码
+       $('#submit1').click(function(){
+           var primary=$('#original_pwd').val();
+           var new_pwd=$('#new_pwd').val();
+           var renew=$('#renew_pwd').val();
+           var check=false;
+           var tips1,tips2,tips3,tips4;
+           if(primary==''){
+                tips1=layer.tips('请输入原密码', '#original_pwd', {
+                   tips: [4, '#FF5722'],
+                   tipsMore: true,
+               });
+               check = true;
+           } else{
+               layer.close(tips1);
+           }
+           if(new_pwd==''){
+               tips2=layer.tips('请输入新密码', '#new_pwd', {
+                   tips: [4, '#FF5722'],
+                   tipsMore: true,
+
+               });
+               check = true;
+           } else{
+               layer.close(tips2);
+           }
+           if(renew==''){
+               tips3=layer.tips('请重复新密码', '#renew_pwd', {
+                   tips: [4, '#FF5722'],
+                   tipsMore: true,
+               });
+               check = true;
+           } else{
+               if(new_pwd!=renew){
+                   tips4=layer.tips('密码不一致', '#renew_pwd', {
+                       tips: [4, '#FF5722'],
+                       tipsMore: true,
+                   });
+                   check = true;
+               }
+               else{
+                   layer.close(tips4);
+               }
+           }
+           if(check){
+               return false;
+           }else{
+               alert("重置成功");
+           }
+       })
+    })
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->
+    <title>IT服务平台</title>
+    <!-- BOOTSTRAP CORE STYLE  -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <!-- FONT AWESOME ICONS  -->
+    <link href="assets/css/font-awesome.css" rel="stylesheet"/>
+    <!-- CUSTOM STYLE  -->
+    <link href="assets/css/style.css" rel="stylesheet"/>
+    <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<!-- HEADER END-->
+<div class="navbar navbar-inverse set-radius-zero">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img src="assets/img/logo.jpg"/>
+        </a>
+        <div class="pull-right" style="margin-top: 20px;">
+            <div class="btn-group">
+                <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">中文 <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="login-en.html">English</a></li>
+                </ul>
+            </div>
+    </div>
+    </div>
+    <div class="container">
+        <div class="">
+            <h4 class="page-head-line position">IT服务自助平台</h4>
+        </div>
+    </div>
+</div>
+<!-- LOGO HEADER END-->
+
+<!-- MENU SECTION END-->
+<div class="content-wrapper">
+    <div class="container">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading position">
+                    身份验证
+                </div>
+                <div class="panel-body">
+                    <div class="alert alert-danger">
+                        <a href="#" class="close" data-dismiss="alert">
+                            &times;
+                        </a>
+                        <strong>警告！</strong>您的网络连接有问题。
+                    </div>
+                    <label>工号或学号 : </label>
+                    <input id="number" placeholder="请输入工号或学号" type="text" class="form-control"/>
+
+                    <label>自助平台密码 : </label>
+                    <input id="pwd" placeholder="请输入平台密码" type="password" class="form-control col-md-4"/>
+                    <p></p>
+                    <label style="float: right;clear:both;"><a href="found_pwd.html">忘记密码了？</a></label>
+                    <br/>
+                    <label>验证码 : </label>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input id="security" placeholder="请输入验证码" type="text" class="form-control">
+                            <span class="input-group-btn"><input class="btn btn-info" id="discern" type="button" onclick="createCode()"></span>
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-6 -->
+                </div>
+                <div class="panel-footer">
+                    <button class="btn btn-primary" type="button" id="submit"> 提 交</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="register.html" class="btn btn-success"> 开通账号 </a>
+                    <p></p>
+                    <p>第一次登陆，请点击“开通账号”</p>
+                </div>
+            </div>
+            <br/>
+        </div>
+
+    </div>
+</div>
+<!-- CONTENT-WRAPPER SECTION END-->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="text-align: center;">
+                Copyright &copy; 2014 浙江理工大学网络信息中心版权所有　|　E-mail：nic@zstu.edu.cn　|　浙ICP备10006424号
+            </div>
+
+        </div>
+    </div>
+</footer>
+<!-- FOOTER SECTION END-->
+<!-- JAVASCRIPT AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+<!-- CORE JQUERY SCRIPTS -->
+<script src="assets/js/jquery-1.11.1.js"></script>
+<!-- BOOTSTRAP SCRIPTS  -->
+<script src="assets/js/bootstrap.js"></script>
+<script src="https://cdn.bootcss.com/layer/3.1.0/layer.js"></script>
+<script>
+    $(function () {
+        $('#submit').click(function () {
+            var number = $('#number').val();
+            var pwd = $('#pwd').val();
+            var check = false;
+            if (number == '') {
+                layer.tips('请输入工号或学号', '#number', {
+                    tips: [4, '#FF5722'],
+                    tipsMore: true,
+                });
+                check = true;
+            }
+            if (pwd == '') {
+                layer.tips('请输入工号或学号', '#pwd', {
+                    tips: [4, '#FF5722'],
+                    tipsMore: true,
+                });
+                check = true;
+            }
+
+            var inputCode = document.getElementById("security").value.toUpperCase(); //取得输入的验证码并转化为大写
+            if(inputCode.length <= 0) { //若输入的验证码长度为0
+                layer.tips('请输入验证码', '#security', {
+                    tips: [4, '#FF5722'],
+                    tipsMore: true,
+                });
+                check = true;
+            } else if(inputCode != code) { //若输入的验证码与产生的验证码不一致时
+                layer.tips('验证码输入错误', '#security', {
+                    tips: [4, '#FF5722'],
+                    tipsMore: true,
+                });
+                check = true;
+            }
+
+            if (check) {
+                return false;
+            } else {
+                window.location.href = 'information.html';
+            }
+
+
+        })
+    })
+</script>
+<script>
+    var code; //在全局定义验证码
+    //产生验证码
+    window.onload = function() {
+        createCode();
+    }
+    function createCode() {
+        code = "";
+        var codeLength = 5; //验证码的长度
+        var checkCode = document.getElementById("discern");
+        var random = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
+            'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'); //随机数
+        for(var i = 0; i < codeLength; i++) { //循环操作
+            var charIndex = Math.floor(Math.random() * 36); //取得随机数的索引
+            code += random[charIndex]; //根据索引取得随机数加到code上
+        }
+        checkCode.value = code; //把code值赋给验证码
+    }
+    //校验验证码
+    function validate() {
+        var inputCode = document.getElementById("security").value.toUpperCase(); //取得输入的验证码并转化为大写
+        if(inputCode.length <= 0) { //若输入的验证码长度为0
+            alert("请输入验证码！"); //则弹出请输入验证码
+        } else if(inputCode != code) { //若输入的验证码与产生的验证码不一致时
+            alert("验证码输入错误！"); //则弹出验证码输入错误
+            createCode(); //刷新验证码
+        } else { //输入正确时
+            alert("^-^"); //弹出^-^
+        }
+    }
+</script>
+</body>
+
+</html>

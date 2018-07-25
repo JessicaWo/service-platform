@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->
+    <title>IT服务平台</title>
+    <!-- BOOTSTRAP CORE STYLE  -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <!-- FONT AWESOME ICONS  -->
+    <link href="assets/css/font-awesome.css" rel="stylesheet"/>
+    <!-- CUSTOM STYLE  -->
+    <link href="assets/css/style.css" rel="stylesheet"/>
+    <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<!-- HEADER END-->
+<div class="navbar navbar-inverse set-radius-zero">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/img/logo.jpg"/>
+            </a>
+
+        </div>
+        <br><br>
+        <div class="pull-right">
+            <div class="btn-group">
+                <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">中文 <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="index-en.html">English</a></li>
+                </ul>
+            </div>
+            &nbsp;&nbsp;
+
+            <a href="login.html" class="btn btn-default">退出</a>
+        </div>
+    </div>
+</div>
+<br/>
+<!-- LOGO HEADER END-->
+<section class="menu-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="navbar-collapse collapse">
+                    <ul id="menu-top" class="nav navbar-nav">
+                        <li><a href="index.html">个人信息</a></li>
+                        <li><a href="application.html">我的应用</a></li>
+                        <li><a class="menu-top-active" href="reset_pwd.html">重置密码</a></li>
+                        <li><a href="safe.html">安全中心</a></li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- MENU SECTION END-->
+<div class="content-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="page-head-line position">浙江理工大学IT服务自助平台</h4>
+
+            </div>
+
+        </div>
+                <div class="notice-board">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            重置密码
+                            <div class="pull-right">
+                                <div class="dropdown">
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="col-md-6 col-md-offset-3" id="reset">
+                                <div class="alert alert-danger">
+                                    <a href="#" class="close" data-dismiss="alert">
+                                        &times;
+                                    </a>
+                                    <strong>警告！</strong>您的网络连接有问题。
+                                </div>
+                                <label>修改项目 : </label>
+                                <ul id="modifier" class="position col-md-12">
+                                    <li class="col-md-3"><img src="assets/img/1.png"/>
+                                        <p><input type="radio" name="1" value="option1"/>邮箱</p></li>
+                                    <li class="col-md-3"><img src="assets/img/2.png"/>
+                                        <p><input type="radio" name="1" value="option2"/>VPN</p></li>
+                                    <li class="col-md-3"><img src="assets/img/3.png"/>
+                                        <p><input type="radio" name="1" value="option3"/>网盘</p></li>
+                                    <li class="col-md-3"><img src="assets/img/4.png"/>
+                                        <p><input type="radio" name="1" value="option4"/>无线网</p></li>
+
+                                </ul>
+                                <br>
+                                <label>密码 : </label>
+                                <input id="newPwd" placeholder="请输入密码" type="password" class="form-control"/>
+
+                                <label>重复密码 : </label>
+                                <input id="renew" placeholder="请重复密码" type="password" class="form-control"/>
+                                <br />
+                                <button class="btn btn-primary" type="button" id="submit"> 提 交 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <br/>
+                                <br/>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+    </div>
+</div>
+<!-- CONTENT-WRAPPER SECTION END-->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="text-align: center;">
+                Copyright &copy; 2014 浙江理工大学网络信息中心版权所有　|　E-mail：nic@zstu.edu.cn　|　浙ICP备10006424号
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- FOOTER SECTION END-->
+<!-- JAVASCRIPT AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+<!-- CORE JQUERY SCRIPTS -->
+<script src="assets/js/jquery-1.11.1.js"></script>
+<!-- BOOTSTRAP SCRIPTS  -->
+<script src="assets/js/bootstrap.js"></script>
+<script src="https://cdn.bootcss.com/layer/3.1.0/layer.js"></script>
+<script>
+    $(function(){
+        $('#submit').click(function(){
+            var new_pwd=$('#newPwd').val();
+            var renew=$('#renew').val();
+            var check=false;
+            if(new_pwd==''){
+                layer.tips('请输入密码', '#newPwd', {
+                    tips: [4, '#FF5722'],
+                    tipsMore: true,
+                });
+                check = true;
+            }
+            if(renew==''){
+               layer.tips('请重复密码', '#renew', {
+                    tips: [4, '#FF5722'],
+                    tipsMore: true,
+                });
+                check = true;
+            } else{
+                if(new_pwd!=renew){
+                    layer.tips('密码不一致', '#renew', {
+                        tips: [4, '#FF5722'],
+                        tipsMore: true,
+                    });
+                    check = true;
+                }
+            }
+
+                var val=$('#modifier :input[name="1"]:checked').val();
+                if(val==null){
+                    layer.tips('请选择修改项目', '#modifier', {
+                        tips: [4, '#FF5722'],
+                        tipsMore: true
+                    });
+                    check=true;
+                }
+
+
+            if(check){
+                return false;
+            }else{
+                layer.alert("提交成功！");
+            }
+        })
+    })
+</script>
+</body>
+</html>

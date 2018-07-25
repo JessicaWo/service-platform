@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<meta name="description" content="" />
+		<meta name="author" content="" />
+		<!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+		<title>IT服务平台</title>
+		<!-- BOOTSTRAP CORE STYLE  -->
+		<link href="assets/css/bootstrap.css" rel="stylesheet" />
+		<!-- FONT AWESOME ICONS  -->
+		<link href="assets/css/font-awesome.css" rel="stylesheet" />
+		<!-- CUSTOM STYLE  -->
+		<link href="assets/css/style.css" rel="stylesheet" />
+		<!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	</head>
+
+	<body>
+
+		<!-- HEADER END-->
+		<div class="navbar navbar-inverse set-radius-zero">
+			<div class="container">
+				<a class="navbar-brand" href="index.html">
+					<img src="assets/img/logo.jpg"/>
+				</a>
+                <div class="pull-right" style="margin-top: 50px;">
+					<div class="btn-group">
+						<button data-toggle="dropdown" class="btn btn-default dropdown-toggle">中文 <span class="caret"></span></button>
+						<ul class="dropdown-menu">
+							<li><a href="login-en.html">English</a></li>
+						</ul>
+					</div>
+                </div>
+			</div>
+
+            <div class="container">
+
+                <div class="">
+                    <h4 class="page-head-line position">IT服务自助平台</h4>
+                </div>
+            </div>
+		</div>
+		<!-- LOGO HEADER END-->
+
+		<!-- MENU SECTION END-->
+		<div class="content-wrapper">
+			<div class="container">
+				<div class="col-md-4 col-md-offset-4">
+					<div class="panel panel-primary">
+						<div class="panel-heading position">
+							找回密码
+						</div>
+						<div class="panel-body">
+							<label>工号或学号 : </label>
+							<input id="number" placeholder="请输入工号或学号" type="text" class="form-control" />
+							<br />
+							<label>密保信息 :  </label>
+							<input id="privary" placeholder="请输入密保邮箱" type="password" class="form-control col-md-4" />
+							<br />
+							<br />
+							<br />
+
+							<span class="col-md-6"><input type="radio" name="optionsRadios" id="optionsRadios1" value="请输入密保邮箱" checked />密保邮箱</span>
+							<span class="col-md-6"><input type="radio" name="optionsRadios" id="optionsRadios2" value="请输入密保手机" />密保手机</span>
+						</div>
+						<div class="panel-footer">
+							<button type="button" id="submit" class="btn btn-primary"> 下一步 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="login.html" class="btn btn-success"> 返回首页 </a>
+						</div>
+					</div>
+					<br/>
+				</div>
+
+
+
+			</div>
+		</div>
+		<!-- CONTENT-WRAPPER SECTION END-->
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12" style="text-align: center;">
+						Copyright &copy; 2014  浙江理工大学网络信息中心版权所有　|　E-mail：nic@zstu.edu.cn　|　浙ICP备10006424号
+					</div>
+
+				</div>
+			</div>
+		</footer>
+		<!-- FOOTER SECTION END-->
+		<!-- JAVASCRIPT AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+		<!-- CORE JQUERY SCRIPTS -->
+		<script src="assets/js/jquery-1.11.1.js"></script>
+		<!-- BOOTSTRAP SCRIPTS  -->
+		<script src="assets/js/bootstrap.js"></script>
+		<script src="https://cdn.bootcss.com/layer/3.1.0/layer.js"></script>
+	<script>
+		$(function(){
+		    $('input[name="optionsRadios"]').each(function(){
+		        $(this).click(function(){
+		            var select=$('input[name="optionsRadios"]:checked').val();
+					$('#privary').attr('placeholder',select);
+				})
+			})
+		    $('#submit').click(function(){
+		        var check=false;
+		        var number=$('#number').val();
+				var placeholder=$('#privary').attr('placeholder');
+				var text=$('#privary').val();
+				if(number==''){
+                    layer.tips('请输入工号或学号', '#number', {
+                        tips: [4, '#FF5722'],
+                        tipsMore: true,
+                    });
+                    check = true;
+				}
+				if(text==''){
+                    layer.tips(placeholder, '#privary', {
+                        tips: [4, '#FF5722'],
+                        tipsMore: true,
+                    });
+                    check = true;
+				}
+
+				if(check){
+				    return false;
+				}else{
+				    window.location.href='verification.html';
+				}
+			})
+		})
+	</script>
+	</body>
+
+</html>
